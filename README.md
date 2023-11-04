@@ -1,6 +1,6 @@
-## Chapter 7. Aggregations: min, max, and Everything in Between
+## 2.4. [Introduction to NumPy | Computation on arrays aggregates](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/02.04-Computation-on-arrays-aggregates.ipynb)
 
-### 7.1. Example: What Is the Average Height of US Presidents?
+### 2.4.1. Example: What Is the Average Height of US Presidents?
 
 ```python
 !curl -sLO https://github.com/jakevdp/PythonDataScienceHandbook/raw/master/notebooks/data/president_heights.csv
@@ -37,7 +37,7 @@ plt.ylabel('number')
 plt.style.available
 ```
 
-## Chapter 25. General Matplotlib Tips
+## 4. [Introduction to Matplotlib](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/04.00-Introduction-To-Matplotlib.ipynb)
 
 ```python
 %matplotlib ipympl
@@ -49,7 +49,7 @@ plt.plot(x, np.sin(x), '-')
 plt.plot(x, np.cos(x), '--')
 ```
 
-## Chapter 26. Simple Line Plots
+## 4.1. [Simple Line Plots](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/04.01-Simple-Line-Plots.ipynb)
 
 ```python
 %matplotlib ipympl
@@ -64,7 +64,7 @@ plt.plot(x, np.cos(x), '-.k') # dashdot black
 plt.plot(x, np.cos(x +1 ), ':r'); # dotted red
 ```
 
-## Chapter 27. Simple Scatter Plots
+## 4.25. [Simple Scatter Plots](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/04.02-Simple-Scatter-Plots.ipynb)
 
 ```python
 %matplotlib ipympl
@@ -80,7 +80,7 @@ plt.scatter(x, y, c=colors, s=sizes, alpha=0.3)
 plt.colorbar()
 ```
 
-## Chapter 38. Introducing Scikit-Learn
+## 5.2. [Introducing Scikit-Learn](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/05.02-Introducing-Scikit-Learn.ipynb)
 
 ```python
 %matplotlib ipympl
@@ -90,7 +90,7 @@ iris.head()
 sns.pairplot(iris, hue='species', height=1.5)
 ```
 
-### 38.1. Supervised Learning Example: Simple Linear Regression
+### 5.2.1. Supervised Learning Example: Simple Linear Regression
 
 ```python
 %matplotlib ipympl
@@ -123,7 +123,7 @@ yfit = model.predict(Xfit)
 plt.plot(xfit, yfit)
 ```
 
-### 38.2. Supervised Learning Example: Iris Classification
+### 5.2.2. Supervised Learning Example: Iris Classification
 
 ```python
 %matplotlib ipympl
@@ -143,7 +143,7 @@ from sklearn.metrics import accuracy_score
 accuracy_score(ytest, y_model)
 ```
 
-### 38.3. Unsupervised Learning Example: Iris Dimensionality
+### 5.2.3. Unsupervised Learning Example: Iris Dimensionality
 
 ```python
 %matplotlib ipympl
@@ -162,7 +162,7 @@ iris['PCA2'] = X_2D[:, 1]
 sns.lmplot(x="PCA1", y="PCA2", hue='species', data=iris, fit_reg=False)
 ```
 
-### 38.4. Unsupervised Learning Example: Iris Clustering
+### 5.2.4. Unsupervised learning Example: Iris Clustering
 
 ```python
 %matplotlib ipympl
@@ -188,7 +188,7 @@ iris['cluster'] = y_gmm
 sns.lmplot(x="PCA1", y="PCA2", data=iris, hue='species', col='cluster', fit_reg=False)
 ```
 
-### 38.5. Application: Exploring Handwritten Digits
+### 5.2.5. Application: Exploring Handwritten Digits
 
 ```python
 %matplotlib ipympl
@@ -209,7 +209,7 @@ y = digits.target
 y.shape
 ```
 
-#### 38.5.1. Unsupervised Learning Example: Dimensionality Reduction
+#### 5.2.5.1. Unsupervised Learning Example: Dimensionality Reduction
 
 ```python
 %matplotlib ipympl
@@ -228,7 +228,7 @@ plt.colorbar(label='digit label', ticks=range(10))
 plt.clim(-0.5, 9.5)
 ```
 
-#### 38.5.2. Classification on Digits
+#### 5.2.5.2. Classification on Digits
 
 %matplotlib ipympl
 from sklearn.datasets import load_digits
@@ -262,9 +262,9 @@ for i, ax in enumerate(axes.flat):
     ax.imshow(test_images[i], cmap='binary', interpolation='nearest')
     ax.text(0.05, 0.05, str(y_model[i]), transform=ax.transAxes, color='green' if (ytest[i] == y_model[i]) else 'red')
 
-## Chapter 39. Hyperparameters and Model Validation
+## 5.3. [Hyperparameters and Model Validation](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/05.03-Hyperparameters-and-Model-Validation.ipynb)
 
-### 39.1. Model Validation the Wrong Way
+### 5.3.1. Model Validation the Wrong Way
 
 ```python
 from sklearn.datasets import load_iris
@@ -279,7 +279,7 @@ from sklearn.metrics import accuracy_score
 accuracy_score(y, y_model)
 ```
 
-### 39.2. Model Validation the Right Way: Holdout Sets
+### 5.3.2. Model Validation the Right Way: Holdout Sets
 
 ```python
 from sklearn.datasets import load_iris
@@ -299,9 +299,9 @@ from sklearn.metrics import accuracy_score
 accuracy_score(y2, y2_model)
 ```
 
-### 39.3. Model Validation via Cross-Validation
+### 5.3.3. Model Validation via Cross-Validation
 
-#### 39.3.1. two-fold cross-validation
+#### 5.3.3.1. two-fold cross-validation
 
 ```python
 from sklearn.datasets import load_iris
@@ -319,7 +319,7 @@ from sklearn.metrics import accuracy_score
 accuracy_score(y1, y1_model), accuracy_score(y2, y2_model)
 ```
 
-#### 39.3.2. five-fold cross-validation
+#### 5.3.3.2. five-fold cross-validation
 
 ```python
 from sklearn.datasets import load_iris
@@ -338,9 +338,9 @@ scores
 scores.mean()
 ```
 
-### 39.4. Validation Curves in Scikit-Learn
+### 5.3.4. Validation Curves in Scikit-Learn
 
-#### 39.4.1. part 1
+#### 5.3.4.1. part 1
 
 ```python
 from sklearn.preprocessing import PolynomialFeatures
@@ -374,7 +374,7 @@ plt.ylim(-2, 12)
 plt.legend(loc='best')
 ```
 
-#### 39.4.2. part 2
+#### 5.3.4.2. part 2
 
 ```python
 from sklearn.preprocessing import PolynomialFeatures
@@ -409,7 +409,7 @@ plt.xlabel('degree')
 plt.ylabel('score')
 ```
 
-#### 39.4.3. part 3
+#### 5.3.4.3. part 3
 
 ```python
 from sklearn.preprocessing import PolynomialFeatures
@@ -440,9 +440,9 @@ plt.plot(X_test.ravel(), y_test);
 plt.axis(lim);
 ```
 
-## Chapter 42. In Depth: Linear Regression
+## 5.6. [In Depth: Linear Regression](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/05.06-Linear-Regression.ipynb)
 
-### 42.1. Polynomial basis functions
+### 5.6.1. Polynomial basis functions
 
 ```python
 %matplotlib inline
@@ -465,7 +465,7 @@ plt.scatter(x, y)
 plt.plot(xfit, yfit)
 ```
 
-### 42.2. Example: Predicting Bicycle Traffic
+### 5.6.2. Example: Predicting Bicycle Traffic
 
 ```python
 !curl -sLo FremontBridge.csv https://data.seattle.gov/api/views/65db-xm6k/rows.csv
@@ -548,9 +548,9 @@ print(pd.DataFrame({'effect': params.round(0),
                     'error': err.round(0)}))
 ```
 
-## Chapter 43. In Depth: Support Vector Machines
+## 5.7. [In Depth: Support Vector Machines](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/05.07-Support-Vector-Machines.ipynb)
 
-### 43.1. discriminative classification
+### 5.7.1. discriminative classification
 
 ```python
 %matplotlib inline
@@ -564,7 +564,7 @@ X, y = make_blobs(n_samples=50, centers=2,
 plt.scatter(X[:, 0], X[:, 1], c=y, s=50, cmap='autumn')
 ```
 
-#### 43.1.1. discrimination line of 3 different gradients
+#### 5.7.1.1. discrimination line of 3 different gradients
 
 ```python
 xfit = np.linspace(-1, 3.5)
@@ -575,9 +575,9 @@ for m, b in [(1, 0.65), (0.5, 1.6), (-0.2, 2.9)]:
 plt.xlim(-1, 3.5)
 ```
 
-#### 43.1.2. discrimination line of 3 different gradients wiuth margins
+#### 5.7.1.2. discrimination line of 3 different gradients wiuth margins
 
-### 43.2. Maximizing the Margin
+### 5.7.2. Maximizing the Margin
 
 ```python
 xfit = np.linspace(-1, 3.5)
@@ -590,7 +590,7 @@ for m, b, d in [(1, 0.65, 0.33), (0.5, 1.6, 0.55), (-0.2, 2.9, 0.2)]:
 plt.xlim(-1, 3.5)
 ```
 
-#### 43.2.1. Fitting a support vector machine
+#### 5.7.2.1. Fitting a support vector machine
 
 ```python
 from sklearn.svm import SVC # "Support vector classifier"
@@ -630,7 +630,7 @@ plot_svc_decision_function(model)
 model.support_vectors_
 ```
 
-#### 43.2.2. Having more points doesn't affect the discriminator
+#### 5.7.2.2. Having more points doesn't affect the discriminator
 
 ```python
 def plot_svm(N=10, ax=None):
@@ -654,14 +654,14 @@ for axi, N in zip(ax, [60, 120]):
     axi.set_title('N = {0}'.format(N))
 ```
 
-##### 43.2.3. Interactive contrast between number of points
+##### 5.7.2.3. Interactive contrast between number of points
 
 ```python
 from ipywidgets import interact, fixed
 interact(plot_svm, N=[60, 120], ax=fixed(None))
 ```
 
-### 43.3. Beyond linear boundaries: Kernel SVM
+### 5.7.3. Beyond linear boundaries: Kernel SVM
 
 ```python
 %matplotlib inline
@@ -705,7 +705,7 @@ def plot_svc_decision_function(model, ax=None, plot_support=True):
 plot_svc_decision_function(clf, plot_support=False)
 ```
 
-#### 43.3.1. change to 3-dimensional interactive
+#### 5.7.3.1. change to 3-dimensional interactive
 
 ```python
 r = np.exp(-(X ** 2).sum(1))
@@ -727,7 +727,7 @@ plot_svc_decision_function(clf)
 plt.scatter(clf.support_vectors_[:, 0], clf.support_vectors_[:, 1], s=300, lw=1, facecolors='none')
 ```
 
-### 43.4. Tuning the SVM: Softening Margins
+### 5.7.4. Tuning the SVM: Softening Margins
 
 ```python
 %matplotlib inline
@@ -785,7 +785,7 @@ for axi, C in zip(ax, [10.0, 0.1]):
     axi.set_title('C = {0:.1f}'.format(C), size=14)
 ```
 
-### 43.5. Example: Face Recognition
+### 5.7.5. Example: Face Recognition
 
 ```python
 %matplotlib inline
