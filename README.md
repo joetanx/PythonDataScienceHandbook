@@ -232,6 +232,7 @@ plt.clim(-0.5, 9.5)
 
 #### 5.2.5.2. Classification on Digits
 
+```python
 %matplotlib ipympl
 from sklearn.datasets import load_digits
 digits = load_digits()
@@ -263,6 +264,7 @@ test_images = Xtest.reshape(-1, 8, 8)
 for i, ax in enumerate(axes.flat):
     ax.imshow(test_images[i], cmap='binary', interpolation='nearest')
     ax.text(0.05, 0.05, str(y_model[i]), transform=ax.transAxes, color='green' if (ytest[i] == y_model[i]) else 'red')
+```
 
 ## 5.3. [Hyperparameters and Model Validation](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/05.03-Hyperparameters-and-Model-Validation.ipynb)
 
