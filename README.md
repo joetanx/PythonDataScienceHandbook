@@ -1,3 +1,5 @@
+Book directory: https://github.com/jakevdp/PythonDataScienceHandbook/tree/master/notebooks_v1
+
 ## 2.4. [Introduction to NumPy | Computation on arrays aggregates](https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks_v1/02.04-Computation-on-arrays-aggregates.ipynb)
 
 ### 2.4.1. Example: What Is the Average Height of US Presidents?
